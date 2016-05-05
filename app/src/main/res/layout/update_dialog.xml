@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_dialog_container"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/shape_corner_layer" >
+
+    <!--   <TextView
+        android:id="@+id/dialog_title_tv"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/btn_disable"
+        android:visibility="gone"
+        android:gravity="center"
+        android:text="版本更新"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/font_2" />-->
+        <ImageView
+            android:id="@+id/dialog_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/updata_title"
+            />
+         <TextView
+        android:background="@android:color/white"
+        android:id="@+id/dialog_content_tv"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:gravity="center|left"
+        android:text=""
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:lineSpacingExtra="5dp"
+        android:textColor="@color/main_font_grey"
+        android:textSize="@dimen/font_3" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/cancle_btn"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="45dp"
+            android:background="@drawable/dialog_ok_btn_left"
+            android:text="取消"
+            android:textColor="@color/main_font_grey"
+            android:textSize="@dimen/font_3" />
+
+     <!--    <ImageView
+            android:layout_width="2dp"
+            android:layout_height="45dp"
+            android:background="@color/white" /> -->
+
+        <Button
+            android:id="@+id/ok_btn"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="45dp"
+            android:background="@drawable/dialog_ok_btn_right"
+            android:text="立即更新"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/font_3" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:gravity="center"-->
+        <!--android:text="返回"-->
+        <!-- -->
+        <!--android:textColor="@color/main_font_green"-->
+        <!--android:drawableLeft="@drawable/person_back"-->
+        <!--android:drawablePadding="@dimen/padding_text_small"-->
+        <!--android:layout_gravity="center_vertical"-->
+        <!--android:paddingLeft="@dimen/activity_padding_normal"-->
+        <!--android:paddingRight="@dimen/activity_padding_normal"/>-->
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="@dimen/activity_padding_normal"
+            android:paddingRight="@dimen/activity_padding_normal"
+            android:scaleType="centerInside"
+            android:src="@drawable/person_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="图片剪切"
+            android:textColor="#ffbf78"
+            android:textSize="@dimen/font_big_title" />
+
+
+        <TextView
+            android:id="@+id/tv_complete"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:paddingLeft="@dimen/activity_padding_normal"
+            android:paddingRight="@dimen/activity_padding_normal"
+            android:text="完成"
+            android:textColor="#ffbf78"
+            android:textSize="@dimen/font_title" />
+
+    </RelativeLayout>
+
+    <com.edmodo.cropper.CropImageView
+        android:id="@+id/CropImageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"/>
+
+
+</LinearLayout>

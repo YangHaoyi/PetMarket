@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/welcome"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+<ImageView
+    android:id="@+id/ad"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    />
+    <ImageView
+        android:id="@+id/iv_bottom_logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:src="@drawable/welcome_logo"
+        />
+
+    <TextView
+        android:id="@+id/tv_jump"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/activity_padding_small"
+        android:text="@string/jump"
+        android:textSize="@dimen/font_3"
+        android:layout_marginRight="@dimen/activity_margin_small"
+        android:layout_marginTop="@dimen/activity_margin_small"
+        android:textColor="@android:color/white"
+        android:layout_gravity="top|right"
+        />
+
+
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+
+</FrameLayout>

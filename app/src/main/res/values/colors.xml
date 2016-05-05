@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="main_font_black">#373737</color>
+    <color name="main_font_red">#FFA543</color>
+    <color name="title_divider">#dcdcdc</color>
+    <color name="bg_color">#efefef</color> <!--f7f7f7-->
+    <color name="transparent_black">#aa000000</color>
+    <color name="menu_bg">#eeeeee</color>
+    <color name="main_font_grey">#979797</color>
+    <color name="logo_bg">#747474</color>
+    <color name="dialog_red">#ff7575</color>
+</resources>

@@ -1,0 +1,220 @@
+apply plugin: 'com.android.application'
+//应用插件
+//apply plugin: 'com.bugtags.library.plugin'
+
+def releaseTime(){
+    return new Date().format("yyyy-MM-dd",TimeZone.getTimeZone("UTC"));
+}
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion '21.1.2'
+
+
+    defaultConfig {
+        applicationId "com.lbt.petmarket"
+        minSdkVersion 14
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+    }
+    lintOptions {
+        abortOnError false
+    }
+
+    signingConfigs {
+        debug {
+        }
+        release {
+            storeFile file('D:/2016/Month_4/0412/Pet/PetMarket/PetMarket/petmarket.jks');
+            storePassword "petmarket"
+            keyAlias "petmarket"
+            keyPassword "petmarket"
+        }
+    }
+
+    buildTypes {
+        release {
+            buildConfigField("boolean","LOG_DEBUG","false")
+
+            minifyEnabled true
+            zipAlignEnabled true
+            shrinkResources false
+
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            applicationVariants.all { variant ->
+                variant.outputs.each { output ->
+                    def outputFile = output.outputFile
+                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                        // 输出apk名称为petshow_v1.0_2015-01-15_wandoujia.apk
+                        def fileName = "petmarket_v${defaultConfig.versionName}_${releaseTime()}_${variant.productFlavors[0].name}.apk"
+                        output.outputFile = new File(outputFile.parent, fileName)
+                    }
+                }
+            }
+        }
+        packagingOptions {
+            exclude 'META-INF/maven/com.squareup.okio/okio/pom.xml'
+            exclude 'META-INF/maven/com.squareup.okio/okio/pom.properties'
+        }
+    }
+
+    productFlavors {
+//        shichang360{
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "shichang360"]
+//        }
+//        anzhi{
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "anzhi"]
+//        }
+//        baidu {
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "baidu"]
+//        }
+        baidutieba {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "baidutieba"]
+        }
+//        baoruan{
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "baoruan"]
+//        }
+//        camera360 {
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "camera360"]
+//        }
+//        jifeng{
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "jifeng"]
+//        }
+//        jinli{
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "jinli"]
+//        }
+//        leshangdian{
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "leshangdian"]
+//        }
+//        meitxx{
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "meitxx"]
+//        }
+//        meizu{
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "meizu"]
+//        }
+//        mumayi{
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "mumayi"]
+//        }
+//        nduo{
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "nduo"]
+//        }
+//        official{
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "official"]
+//        }
+//        oppo{
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "oppo"]
+//        }
+//        ruixing{
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "ruixing"]
+//        }
+//        shoujijsq{
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "shoujijsq"]
+//        }
+//        sougou{
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "sougou"]
+//        }
+//        uc{
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "uc"]
+//        }
+//        wandoujia{
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "wandoujia"]
+//        }
+//        wangyi{
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "wangyi"]
+//        }
+//        wanpu{
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "wanpu"]
+//        }
+//        xiaomi{
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "xiaomi"]
+//        }
+//        yingyongbao{
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "yingyongbao"]
+//        }
+//        yingyonghui{
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "yingyonghui"]
+//        }
+//        youyi{
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "youyi"]
+//        }
+//        yyyuyin{
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "yyyuyin"]
+//        }
+//        huawei{
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "huawei"]
+//        }
+//        meitushichang{
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "meitushichang"]
+//        }
+//        baiduyuedu{
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "baiduyuedu"]
+//        }
+//        h5{
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "h5"]
+//        }
+//        kuchuan{
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "kuchuan"]
+//        }
+//        yumi{
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "yumi"]
+//        }
+//        suning{
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "suning"]
+//        }
+//        liantongwo{
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "liantongwo"]
+//        }
+//        leshi{
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "leshi"]
+//        }
+//        yingyongku{
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "yingyongku"]
+//        }
+//        sanxing{
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "sanxing"]
+//        }
+//        hanxin{
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "hanxin"]
+//        }
+//        chuizi{
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "chuizi"]
+//        }
+    }
+
+    repositories {
+        jcenter()
+        maven { url "https://jitpack.io" }
+        maven { url "https://raw.githubusercontent.com/umeng/mvn-repo-umeng/master/repository" }
+
+    }
+
+
+}
+//必须配置，否则自动上传不会生效
+//bugtags {
+//    appKey "ee5e6cd52c47c5d78611df629a8abece"
+//    appSecret  "1dcb7c52946295e7c340ca360ec684c7"
+//}
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+//    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:22.2.0'
+    compile 'com.android.support:design:22.2.0'
+//    compile files('libs/gson-2.3.1.jar')
+//    compile files('libs/volley.jar')
+//    compile files('libs/universal-image-loader-1.9.4.jar')
+//    compile files('libs/disklrucache-2.0.1.jar')
+    compile 'com.umeng.analytics:analytics:5.6.4'
+    //    compile files('libs/umeng-analytics-v5.6.4.jar')
+    //    compile files('libs/umeng-analytics-v5.5.3.jar')
+    //    compile 'com.liulishuo.filedownloader:library:0.1.9'
+    //    compile 'com.bugtags.library:bugtags-lib:latest.integration'
+    compile 'com.edmodo:cropper:1.0.1'
+    //    compile files('libs/sun.misc.BASE64Decoder.jar')
+        compile 'com.github.ybq:AndroidSpinKit:v1.0.0'
+//    compile 'com.github.ybq:Android-SpinKit:1.0.2'
+//    compile files('libs/AMap_Location_V2.4.0_20160308.jar')
+    compile 'com.umeng:fb:5.4.0'
+}

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">宠物市场</string>
+    <string name="action_settings">设置</string>
+    <string name="title_tail">发了张萌宠照</string>
+    <string name="jump">跳过</string>
+    <string name="feedback_welcome">您可以在这里发布反馈意见，我们会不断改进!</string>
+</resources>
